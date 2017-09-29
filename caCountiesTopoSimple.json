@@ -9,6 +9,7 @@
           "id": "06091",
           "properties": {
             "name": "Sierra",
+            "count": 0,
             "fullName": "Sierra County",
             "areaLand": 2468686345
           },
@@ -87,6 +88,7 @@
           "id": "06083",
           "properties": {
             "name": "Santa Barbara",
+            "count": 0,
             "fullName": "Santa Barbara County",
             "areaLand": 7083926262
           },
@@ -148,6 +150,7 @@
           "id": "06111",
           "properties": {
             "name": "Ventura",
+            "count": 5953,
             "fullName": "Ventura County",
             "areaLand": 4773381212
           },
@@ -182,6 +185,7 @@
           "id": "06037",
           "properties": {
             "name": "Los Angeles",
+            "count": 59474,
             "fullName": "Los Angeles County",
             "areaLand": 10510365728
           },
@@ -216,6 +220,7 @@
           "id": "06097",
           "properties": {
             "name": "Sonoma",
+            "count": 0,
             "fullName": "Sonoma County",
             "areaLand": 4081401375
           },
@@ -250,6 +255,7 @@
           "id": "06031",
           "properties": {
             "name": "Kings",
+            "count": 770,
             "fullName": "Kings County",
             "areaLand": 3598582246
           },
@@ -344,6 +350,7 @@
           "id": "06041",
           "properties": {
             "name": "Marin",
+            "count": 1908,
             "fullName": "Marin County",
             "areaLand": 1348041348
           },
@@ -372,6 +379,7 @@
           "id": "06043",
           "properties": {
             "name": "Mariposa",
+            "count": 28,
             "fullName": "Mariposa County",
             "areaLand": 3752425638
           },
@@ -425,6 +433,7 @@
           "id": "06055",
           "properties": {
             "name": "Napa",
+            "count": 912,
             "fullName": "Napa County",
             "areaLand": 1938262446
           },
@@ -487,6 +496,7 @@
           "id": "06053",
           "properties": {
             "name": "Monterey",
+            "count": 1655,
             "fullName": "Monterey County",
             "areaLand": 8496777466
           },
@@ -584,6 +594,7 @@
           "id": "06045",
           "properties": {
             "name": "Mendocino",
+            "count": 213,
             "fullName": "Mendocino County",
             "areaLand": 9081415546
           },
@@ -631,6 +642,7 @@
           "id": "06051",
           "properties": {
             "name": "Mono",
+            "count": 8,
             "fullName": "Mono County",
             "areaLand": 7896722221
           },
@@ -754,6 +766,7 @@
           "id": "06013",
           "properties": {
             "name": "Contra Costa",
+            "count": 10992,
             "fullName": "Contra Costa County",
             "areaLand": 1871894611
           },
@@ -801,6 +814,7 @@
           "id": "06017",
           "properties": {
             "name": "El Dorado",
+            "count": 1225,
             "fullName": "El Dorado County",
             "areaLand": 4423442486
           },
@@ -948,6 +962,7 @@
           "id": "06023",
           "properties": {
             "name": "Humboldt",
+            "count": 222,
             "fullName": "Humboldt County",
             "areaLand": 9241050191
           },
@@ -990,6 +1005,7 @@
           "id": "06029",
           "properties": {
             "name": "Kern",
+            "count": 5244,
             "fullName": "Kern County",
             "areaLand": 21061724395
           },
@@ -1083,6 +1099,7 @@
           "id": "06019",
           "properties": {
             "name": "Fresno",
+            "count": 6920,
             "fullName": "Fresno County",
             "areaLand": 15433281588
           },
@@ -1120,6 +1137,7 @@
           "id": "06039",
           "properties": {
             "name": "Madera",
+            "count": 1486,
             "fullName": "Madera County",
             "areaLand": 5535058234
           },
@@ -1303,6 +1321,7 @@
           "id": "06001",
           "properties": {
             "name": "Alameda",
+            "count": 11032,
             "fullName": "Alameda County",
             "areaLand": 1914240897
           },
@@ -1332,6 +1351,7 @@
           "id": "06057",
           "properties": {
             "name": "Nevada",
+            "count": 3,
             "fullName": "Nevada County",
             "areaLand": 2480638586
           },
@@ -1379,6 +1399,7 @@
           "id": "06007",
           "properties": {
             "name": "Butte",
+            "count": 2580,
             "fullName": "Butte County",
             "areaLand": 4238422629
           },
@@ -1403,6 +1424,7 @@
           "id": "06047",
           "properties": {
             "name": "Merced",
+            "count": 957,
             "fullName": "Merced County",
             "areaLand": 5011540864
           },
@@ -1492,6 +1514,7 @@
           "id": "06059",
           "properties": {
             "name": "Orange",
+            "count": 4734,
             "fullName": "Orange County",
             "areaLand": 2047743976
           },
@@ -1510,6 +1533,7 @@
           "id": "06025",
           "properties": {
             "name": "Imperial",
+            "count": 281,
             "fullName": "Imperial County",
             "areaLand": 10817387422
           },
@@ -1553,6 +1577,7 @@
           "id": "06005",
           "properties": {
             "name": "Amador",
+            "count": 37,
             "fullName": "Amador County",
             "areaLand": 1539947591
           },
@@ -1579,6 +1604,7 @@
           "id": "06033",
           "properties": {
             "name": "Lake",
+            "count": 186,
             "fullName": "Lake County",
             "areaLand": 3254241507
           },
@@ -1734,6 +1760,7 @@
           "id": "06021",
           "properties": {
             "name": "Glenn",
+            "count": 194,
             "fullName": "Glenn County",
             "areaLand": 3403106640
           },
