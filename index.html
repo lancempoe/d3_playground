@@ -8,14 +8,14 @@
 <style>
 
 .subunit {
-	fill: lightyellow;
+	fill: white;
 	stroke: black;
 	stroke-width: 1px;
 }
 
 .subunit:hover {
 	opacity: 0.7;
-	fill: gray;
+	fill: lightgray;
 
 }
 
@@ -45,6 +45,7 @@ div.tooltip {
 <body>
 	<h1>California Applications D3</h1>
 	<div id = "map"></div>
+	<div id = "label"></div>
 
 <script>
 
@@ -81,12 +82,48 @@ div.tooltip {
 			.enter().append("path")
 			.attr("class", function(d) { return "subunit " + d.properties.name; })
 			.attr("d", path)
+
+			.on("mouseover", function(d) { // tooltip
+				d3.select(this)
+					.style("opacity", .7);
+
+				// label.transition()
+				// 	.duration(200)
+				// 	.style("opacity", .9);
+
+				label.html(`${d.properties.fullName}`)
+					.style("left", (d3.event.pageX) + 10 + "px")
+					.style("top", (d3.event.pageY - 30) + "px")
+					.style('white-space', 'nowrap')
+					.style('width', 'auto')
+					.style('padding', '5 10 5 10');
+			})
+			.on("mouseout", function(d) {
+				d3.select(this)
+					.style("opacity", .35);
+			});
+
+		var label = d3.select("#map").append("rect")
+		  .attr("width", 100)
+		  .attr("height", 20)
+		  .attr('x', 450)
+		  .attr('y', 120)
+		  .style("stroke", "black")
+		  .style("fill", "white");
+
+		// var label = d3.select("#map").append("text")
+	 //  	.data(['asdf'])
+	 //  	.attr('dy', '.35em')
+	 //  	.attr('x', 455)
+	 //  	.attr('y', 130)
+	 //  	.text(function(d) { return d; });
+
 	});
 
 	d3.csv("pace_ca_cities_with_app_counts.csv", function(cities) {
 
 		svg.selectAll("circle")
-			.data(cities)
+			.data(cities.sort(function(a,b) { return b.pace_app_count - a.pace_app_count; }))
 			.enter()
 			.append("circle")
 			.attr("cx", function(d) {
@@ -103,7 +140,7 @@ div.tooltip {
 
 			.on("mouseover", function(d) { // tooltip
 				d3.select(this)
-					.style("opacity", .9);
+					.style("opacity", .7);
 
 				tooltip.transition()
 					.duration(200)
@@ -115,6 +152,7 @@ div.tooltip {
 					.style('white-space', 'nowrap')
 					.style('width', 'auto')
 					.style('padding', '5 10 5 10');
+
 			})
 			.on("mouseout", function(d) {
 				d3.select(this)
