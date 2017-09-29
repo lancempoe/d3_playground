@@ -85,7 +85,7 @@ div.tooltip {
 			.attr("class", "exterior-boundary")
 	});
 
-	d3.json("city.json", function(error, city) {
+	d3.csv("pace_ca_cities_with_app_counts.csv", function(city) {
 		svg.selectAll("circle")
 			.data(city)
 			.enter()
@@ -97,9 +97,9 @@ div.tooltip {
 				return projection([d.lon, d.lat])[1];
 			})
 			.attr("r", function(d) {
-				return Math.sqrt(d.count) * 4;
+				return Math.sqrt(d.pace_app_count || 0) / 4;
 			})
-			.style("fill", "rgb(217,91,67)")
+			.style("fill", "green")
 			.style("opacity", 0.85)
 	});
 
