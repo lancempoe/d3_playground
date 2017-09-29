@@ -87,9 +87,9 @@ div.tooltip {
 				d3.select(this)
 					.style("opacity", .7);
 
-				// label.transition()
-				// 	.duration(200)
-				// 	.style("opacity", .9);
+				label.transition()
+					.duration(200)
+					.style("opacity", .9);
 
 				label.html(`${d.properties.fullName}`)
 					.style("left", (d3.event.pageX) + 10 + "px")
@@ -101,6 +101,10 @@ div.tooltip {
 			.on("mouseout", function(d) {
 				d3.select(this)
 					.style("opacity", .35);
+
+				label.transition()
+					.duration(200)
+					.style("opacity", 0.0);
 			});
 
 		var label = d3.select("#map").append("rect")
