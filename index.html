@@ -7,24 +7,15 @@
 
 <style>
 
-.subunit.San.Francisco,
-.subunit.mateo,
-.subunit.alameda,
-.subunit.santa.clara {
-	fill: maroon;
-	stroke: white;
-	stroke-linejoin: round;
-}
-
 .subunit {
-	fill: steelblue;
-	stroke: white;
+	fill: lightyellow;
+	stroke: black;
 	stroke-width: 1px;
 }
 
 .subunit:hover {
 	opacity: 0.7;
-	fill: lightyellow;
+	fill: gray;
 
 }
 
@@ -83,11 +74,19 @@ div.tooltip {
 			.datum(topojson.mesh(ca, ca.objects.subunits, function(a, b) { return a === b;}))
 			.attr("d", path)
 			.attr("class", "exterior-boundary")
+
+		//bind feature data to the map
+		svg.selectAll(".subunit")
+		  .data(topojson.feature(ca, ca.objects.subunits).features)
+			.enter().append("path")
+			.attr("class", function(d) { return "subunit " + d.properties.name; })
+			.attr("d", path)
 	});
 
-	d3.csv("pace_ca_cities_with_app_counts.csv", function(city) {
+	d3.csv("pace_ca_cities_with_app_counts.csv", function(cities) {
+
 		svg.selectAll("circle")
-			.data(city)
+			.data(cities)
 			.enter()
 			.append("circle")
 			.attr("cx", function(d) {
@@ -100,7 +99,36 @@ div.tooltip {
 				return Math.sqrt(d.pace_app_count || 0) / 4;
 			})
 			.style("fill", "green")
-			.style("opacity", 0.85)
+			.style("opacity", 0.35)
+
+			.on("mouseover", function(d) { // tooltip
+				d3.select(this)
+					.style("opacity", .9);
+
+				tooltip.transition()
+					.duration(200)
+					.style("opacity", .9);
+
+				tooltip.html(`${d.city}: ${d.pace_app_count || 0} apps`)
+					.style("left", (d3.event.pageX) + 10 + "px")
+					.style("top", (d3.event.pageY - 30) + "px")
+					.style('white-space', 'nowrap')
+					.style('width', 'auto')
+					.style('padding', '5 10 5 10');
+			})
+			.on("mouseout", function(d) {
+				d3.select(this)
+					.style("opacity", .35);
+
+				tooltip.transition()
+					.duration(500)
+					.style("opacity", 0.0);
+			});
+
+		var tooltip = d3.select("#map").append("div")
+			.attr("class", "tooltip")
+			.style("opacity", 0);
+
 	});
 
 	//36.980106, -119.317593
